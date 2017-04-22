@@ -8,6 +8,8 @@ two points:
   2、find the left and right entropy of the combinations of word.It is helpful to search the boundary of Chinese Words.
   
 Show some results:
+
+
 侍者
 师父
 秦钟
