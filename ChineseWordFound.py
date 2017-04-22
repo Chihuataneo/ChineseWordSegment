@@ -146,4 +146,4 @@ def word_generation(left_entropy, right_entropy, concreation):
 dictionary(5)               #最大长度五个字的词语,参数可调
 entropy()                   #计算左右信息熵
 concreation()               #计算内部凝固程度
-word_generation(0.5, 0.5, 5000)       #参数可调
+word_generation(0.2, 0.2, 300)       #参数可自行调整
