@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-
-# -*- coding: utf-8 -*-
 """
 Created on Sun Mar 12 13:25:07 2017
 
-@author: Administrator
+@author: YoungHao
 """
 
 import math
@@ -145,7 +143,7 @@ def word_generation(left_entropy, right_entropy, concreation):
                 print(word)
                 score[word] = concreation_word[word] / left_word_entropy[word] / right_word_entropy[word]
 
-dictionary(5)               #最大长度五个字的词语
+dictionary(5)               #最大长度五个字的词语,参数可调
 entropy()                   #计算左右信息熵
 concreation()               #计算内部凝固程度
 word_generation(0.5, 0.5, 5000)       #参数可调
