@@ -6,6 +6,7 @@ Created on Sun Mar 12 13:25:07 2017
 """
 
 import math
+import pickle
 
 corpus = ''
 reverse_corpus = ''
@@ -19,7 +20,7 @@ score = {}
 stop_symbol = '()，．。！,ゅ\'～~`·？-=:、；[]{}*&^%$#@!~+_=-！@#￥%……&*（）——+}{【】||？。><！，;.1234567890：“”"》《+?/%）（@ \n \t \u3000'
 
 for lines in open("红楼梦.txt", encoding = 'utf-8'):
-    corpus = corpus + lines
+    corpus = corpus + lines.strip()
     reverse_corpus = corpus[::-1]   
 def dictionary(w):                 #w：词语最大长度，建立备选词典
     end = int(len(corpus))     #语料长度
@@ -147,3 +148,12 @@ dictionary(5)               #最大长度五个字的词语,参数可调
 entropy()                   #计算左右信息熵
 concreation()               #计算内部凝固程度
 word_generation(0.2, 0.2, 300)       #参数可自行调整
+
+def score2pickle():
+    with open('score_word.pickle', 'wb') as f:
+        pickle.dump(score, f)
+        print('sucess')
+
+score2pickle()
+
+
