@@ -8,6 +8,7 @@ Created on Sun Mar 12 13:25:07 2017
 import math
 import pickle
 
+corpus_list = []
 corpus = ''
 reverse_corpus = ''
 wordDic = {}
@@ -20,8 +21,15 @@ score = {}
 stop_symbol = '()，．。！,ゅ\'～~`·？-=:、；[]{}*&^%$#@!~+_=-！@#￥%……&*（）——+}{【】||？。><！，;.1234567890：“”"》《+?/%）（@ \n \t \u3000'
 
 for lines in open("红楼梦.txt", encoding = 'utf-8'):
-    corpus = corpus + lines.strip()
-    reverse_corpus = corpus[::-1]   
+    corpus_list.append(lines)
+    i = i + 1
+    if(i % 2000 == 0):
+        print(i)
+    
+corpus = ''.join(corpus_list)    #使用list保存string，然后用join方法来合并，效率比"+"更高
+reverse_corpus = corpus[::-1]
+print(len(corpus))
+print(len(reverse_corpus))
 def dictionary(w):                 #w：词语最大长度，建立备选词典
     end = int(len(corpus))     #语料长度
     for f in range(w):
