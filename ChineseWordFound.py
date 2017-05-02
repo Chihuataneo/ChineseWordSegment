@@ -43,9 +43,15 @@ def dictionary(w):                 #w：词语最大长度，建立备选词典
                     flag = 1
             if flag == 0:
                 if word.strip() not in wordDic:
-                    wordDic[word] = 1
+                    try:
+                        wordDic[word] = 1
+                    except Exception:
+                        continue
                 else:
-                    wordDic[word] += 1
+                    try:
+                        wordDic[word] += 1
+                    except Exception:
+                        continue
             i += 1
             j += 1
             flag = 0
@@ -61,9 +67,15 @@ def dictionary(w):                 #w：词语最大长度，建立备选词典
                     flag = 1
             if flag == 0:
                 if word.strip() not in reverse_wordDic:
-                    reverse_wordDic[word] = 1
+                    try:
+                        reverse_wordDic[word] = 1
+                    except Exception:
+                        continue                    
                 else:
-                    reverse_wordDic[word] += 1
+                    try:
+                        reverse_wordDic[word] += 1
+                    except Exception:
+                        continue 
             i += 1
             j += 1
             flag = 0
