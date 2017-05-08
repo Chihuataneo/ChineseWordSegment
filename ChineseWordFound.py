@@ -18,7 +18,7 @@ left_word_entropy = {}
 probability_word = {}
 concreation_word = {}
 score = {}
-stop_symbol = '()，．。！,ゅ\'～~`·？-=:、；[]{}*&^%$#@!~+_=-！@#￥%……&*（）——+}{【】||？。><！，;.1234567890：“”"》《+?/%）（@ \n \t \u3000'
+#stop_symbol = '()，．。！,ゅ\'～~`·？-=:、；[]{}*&^%$#@!~+_=-！@#￥%……&*（）——+}{【】||？。><！，;.1234567890：“”"》《+?/%）（@ \n \t \u3000'
 
 for lines in open("红楼梦.txt", encoding = 'utf-8'):
     corpus_list.append(lines)
@@ -38,9 +38,9 @@ def dictionary(w):                 #w：词语最大长度，建立备选词典
         flag = 0
         while( j < end ):
             word = str(corpus[i:j])
-            for s in stop_symbol:
-                if s in word:
-                    flag = 1
+ #           for s in stop_symbol:
+ #               if s in word:
+ #                   flag = 1
             if flag == 0:
                 if word.strip() not in wordDic:
                     try:
@@ -62,9 +62,9 @@ def dictionary(w):                 #w：词语最大长度，建立备选词典
         flag = 0
         while( j < end ):
             word = str(reverse_corpus[i:j])
-            for s in stop_symbol:
-                if s in word:
-                    flag = 1
+#            for s in stop_symbol:
+#                if s in word:
+#                    flag = 1
             if flag == 0:
                 if word.strip() not in reverse_wordDic:
                     try:
